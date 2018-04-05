@@ -22,7 +22,7 @@ function repeat(){
 	.catch(err => console.log(err))
 }
 
-let lives = 5;
+let lives = 7;
 function guess(){
 	if(lives > 0){
 		console.log('\033c');
