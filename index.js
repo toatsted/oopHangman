@@ -1,10 +1,19 @@
-let inquirer = require("inquirer");
-let Word = require("./Word.js");
+const inquirer = require("inquirer");
+const Word = require("./Word.js");
 
 let words = ["computer", "hacker", "matrix", "keyboard", "javascript", "node",
 	"vim", "html", "css", "laptop", "bootcamp", "sublime", "github", "bootstrap",
 	"array", "string", "integer", "boolean", "random", "hangman", "linux"];
-let item = new Word(words[Math.floor(Math.random() * words.length)]);
+let item;
+
+const startingLives = 7;
+let lives;
+
+function start(){
+	item = new Word(words[Math.floor(Math.random() * words.length)]);
+	lives = startingLives;	
+	guess();
+}
 
 function repeat(){
 	inquirer.prompt([{
@@ -14,15 +23,12 @@ function repeat(){
 	}])
 	.then(answer => {
 		if(answer.repeat){
-			lives = 5;
-			item = new Word(words[Math.floor(Math.random() * words.length)]);
-			guess();
+			start();
 		}
 	})
 	.catch(err => console.log(err))
 }
 
-let lives = 7;
 function guess(){
 	if(lives > 0){
 		console.log('\033c');
@@ -68,4 +74,4 @@ function guess(){
 
 }
 
-guess();
+start();
