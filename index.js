@@ -22,17 +22,14 @@ function repeat(){
 			message: "Play again?"
 	}])
 	.then(answer => {
-		if(answer.repeat){
-			start();
-		}
+		if(answer.repeat) start();
 	})
 	.catch(err => console.log(err))
 }
 
 function guess(){
 	if(lives > 0){
-		console.log('\033c');
-		console.log("Lives: " + lives);
+		console.log("\033c" + "Lives: " + lives);
 		console.log(`
 			${item.display().join(" ")}
 		`)
@@ -53,8 +50,8 @@ function guess(){
 			if(!item.guess(answer.char.toLowerCase()))
 				lives--;
 			if(item.isDone()){
-				console.log("\033c" + "\nLives: " + lives);
-				console.log(`
+				console.log("\033c" + "Lives: " + lives + `
+
 			${item.display().join(" ")}
 			You won!`);
 				repeat();
@@ -65,10 +62,10 @@ function guess(){
 		})
 		.catch(err => console.log(err))
 	} else {
-		console.log('\033c' + "\nLives: 0")
-		console.log(`
+		console.log('\033c' + "Lives: 0" + `
+			
 			${item.wordString.split("").join(" ")}
-			You lost!`)
+			You Lost!`);
 		repeat();		
 	}
 
