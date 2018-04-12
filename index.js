@@ -1,9 +1,10 @@
 const inquirer = require("inquirer");
 const Word = require("./Word.js");
 
-let words = ["computer", "hacker", "matrix", "keyboard", "javascript", "node",
-	"vim", "html", "css", "laptop", "bootcamp", "sublime", "github", "bootstrap",
-	"array", "string", "integer", "boolean", "random", "hangman", "linux"];
+const words = ["computer", "russian hacker", "keanu reeves", "john wick", "keyboard",
+	"javascript", "node js", "vim", "html", "css", "laptop", "bootcamp spot", "sublime text",
+	"github", "bootstrap", "array", "string", "integer", "boolean", "random", "hangman",
+	"supports spaces", "hangman game", "hyper text markup language", "sql", "node package manager"];
 let item;
 
 const startingLives = 7;

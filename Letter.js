@@ -1,7 +1,7 @@
 class Letter{
 	constructor(char){
 		this.char = char;
-		this.on = false;
+		this.on = char === " ";
 	}
 
 	show(){
