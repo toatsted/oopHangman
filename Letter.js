@@ -1,15 +1,15 @@
-class Letter{
-	constructor(char){
+class Letter {
+	constructor(char) {
 		this.char = char;
 		this.on = char === " ";
 	}
 
-	show(){
+	show() {
 		return (this.on) ? this.char : "-";
 	}
 
-	check(char){
-		if(this.char === char){
+	check(char) {
+		if (this.char === char) {
 			this.on = true;
 			return true;
 		}
