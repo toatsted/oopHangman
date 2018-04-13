@@ -63,7 +63,7 @@ function guess() {
 					console.log("\033c" + "Lives: " + lives + `
 
 			${item.display().join(" ")}
-			You won!`);
+			You won!\n`);
 					repeat();
 					return;
 				}
@@ -75,7 +75,7 @@ function guess() {
 		console.log('\033c' + "Lives: 0" + `
 
 			${item.wordString.split("").join(" ")}
-			You Lost!`);
+			You Lost!\n`);
 		repeat();
 	}
 
